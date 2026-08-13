@@ -1,0 +1,49 @@
+{
+  "name": "@agentpulselabs/cli-plugin-pulse",
+  "version": "0.1.0",
+  "description": "oclif plugin that adds the `pulse` topic (portable, contract-enforced build discipline) to the agentpulse CLI. User-installed: `agentpulse plugins install @agentpulselabs/cli-plugin-pulse`. A thin argv→core seam over @agentpulselabs/pulse.",
+  "type": "module",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashishcloud/agentpulse-cli-plugin-pulse.git"
+  },
+  "homepage": "https://github.com/ashishcloud/agentpulse-cli-plugin-pulse#readme",
+  "bugs": {
+    "url": "https://github.com/ashishcloud/agentpulse-cli-plugin-pulse/issues"
+  },
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "oclif": {
+    "commands": "./src/commands",
+    "topicSeparator": " ",
+    "topics": {
+      "pulse": {
+        "description": "Run a contract-enforced build discipline engagement (Discovery → Stories → Architecture → Build → Deliver)."
+      }
+    }
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.js\""
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "oclif-plugin",
+    "agentpulse",
+    "pulse",
+    "cli"
+  ],
+  "dependencies": {
+    "@agentpulselabs/pulse": "^0.1.0"
+  },
+  "peerDependencies": {
+    "@oclif/core": ">=3"
+  }
+}
