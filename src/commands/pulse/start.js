@@ -1,8 +1,9 @@
-import { Command, Flags } from '@oclif/core';
+import { Flags } from '@oclif/core';
+import BaseCommand from '../../lib/BaseCommand.js';
 import { runPulse } from '../../runPulse.js';
 
 /** `agentpulse pulse start` — begin an engagement in the current repo (.pulse/). Thin argv→core shim. */
-export default class PulseStart extends Command {
+export default class PulseStart extends BaseCommand {
   static description = 'Begin a Pulse engagement in the current repo (.pulse/).';
   static examples = ['<%= config.bin %> pulse start --requirements "Build a widget store" --name widgets'];
   static flags = {
@@ -19,6 +20,7 @@ export default class PulseStart extends Command {
       ? fs.readFileSync(flags['requirements-file'], 'utf8')
       : (flags.requirements || '');
     const result = await runPulse('start', { requirements, grounding: flags.grounding, name: flags.name });
-    this.log(JSON.stringify(result, null, 2));
+    this.log(JSON.stringify(result, null, 2)); // default: raw JSON (auto-silenced under --json)
+    return result;                              // --json: standard envelope
   }
 }

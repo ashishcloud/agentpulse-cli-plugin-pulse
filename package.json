@@ -1,6 +1,6 @@
 {
   "name": "@agentpulselabs/cli-plugin-pulse",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "oclif plugin that adds the `pulse` topic (portable, contract-enforced build discipline) to the agentpulse CLI. User-installed: `agentpulse plugins install @agentpulselabs/cli-plugin-pulse`. A thin argv→core seam over @agentpulselabs/pulse.",
   "type": "module",
   "license": "MIT",
